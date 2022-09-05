@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <style>
+        .active{
+            border: red 1px solid;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+
+    <span :class="{active:isred}" @click="changecolor">hhhhhhhh</span>
+    <span :class="active" >xxxxxh</span>
+
+</div>
+
+<div id = "app2">{{message}}
+<h1 v-bind:class='active'>34</h1>
+</div>
+<script>let vue2 = new Vue({
+    el:"#app2",
+    data:{
+        flag:false,
+        message:"hello"
+    },
+    method:{
+        change:function (){
+            this.flag = !this.flag
+        }
+    }
+});
+    let vue = new Vue({
+        el:"#app",
+        data:{
+            isred:false
+        },
+        method:{
+            changecolor:function (){
+                this.isred = !this.isred
+            }
+        }
+    });
+</script>
+</body>
+</html>

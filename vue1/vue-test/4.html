@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <style>
+        .active{
+            background-color: red;
+            border: red 1px solid;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <input type="button" value="颜色变化" :class="isred?'active':''" @click="changecolor"><br>
+    <span :class="{active:isred}">hhhhhhhh</span>
+    <input type="button" value="颜色变化" :class="{active:isred}" @click="changecolor"><br>
+</div>
+
+<script>
+    let vue = new Vue({
+        el:"#app",
+        data:{
+            isred:false
+        },
+        method:{
+            changecolor:function (){
+                this.isred = !this.isred
+            }
+        }
+    });
+</script>
+</body>
+</html>

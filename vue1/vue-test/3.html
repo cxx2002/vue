@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <li v-for="item in items">
+        {{item.message}}
+    </li>
+    <ul v-for="(item,index) in items">
+        {{mj}}-{{item.message}}-{{index}}
+    </ul>
+</div>
+
+<script>
+    let vm = new Vue({
+        el:"#app",
+        data:{
+            mj:"2022年",
+            items:[
+                {message:"七月一日"},
+                {message:"七月二日"},
+                {message:"七月三日"},
+                {message:"七月四日"},
+                {message:"七月五日"},
+                {message:"七月六日"},
+                {message:"七月七日"}
+            ]
+        }
+    });
+</script>
+</body>
+</html>

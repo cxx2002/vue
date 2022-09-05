@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app" >
+<h1 v-if="flag==='A'">A-yes</h1>
+<h1 v-else-if="flag==='B'">B-yes</h1>
+<h1 v-else>NO</h1>
+</div>
+
+<script>
+    let vm = new Vue({
+        el:"#app",
+        data:{
+            flag:'C'
+        }
+    });
+</script>
+</body>
+</html>

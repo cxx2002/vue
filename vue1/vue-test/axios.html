@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.21.1/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <h1>名称:{{info.name}}</h1>
+    网址：<a herf="info.url">{{info.url}}</a>
+    <ul>
+        <li v-for="link in info.links">
+            {{link.name}}------>>>>>>{{link.url}}
+        </li>
+    </ul>
+</div>
+<script>
+    new Vue({
+        el:"#app",
+        data:{
+            info:{
+                name:"",
+                url:""
+            }
+        },
+        mounted(){
+            axios.get("a.json").then(Response => this.info = Response.data)
+        }
+    })
+</script>
+</body>
+</html>

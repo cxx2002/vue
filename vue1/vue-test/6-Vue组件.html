@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <apples></apples>
+    <appless v-for="item in items" v-bind:item="item" v-bind:items="items"></appless>
+</div>
+
+<script>
+    Vue.component("apples",{
+        template:'<li>hello!!</li><li>{{xi}}</li>'
+    })
+
+    Vue.component("appless",{
+        props:[item,items],
+        template:'<li>hello</li><li>{{item}}</li>'
+    })
+
+    var vm = new Vue({
+        el:"#app",
+        data:{
+            items: ["Java", "Linux","前端"]
+        }
+    })
+</script>
+<!--
+view层模板
+3 <div id="app">
+    &lt;!&ndash;组件:传递给组件中的值: props&ndash;&gt;
+    <qinjiang v-for="item in items" v-bind:qin=" item" ></qinjiang>
+    |</div>
+&lt;!&ndash;1.导入Vue.js&ndash;&gt;
+<script src="https://cdn. jsdelivr .net/ npm/vue@2.5.21/dist/vue .min.js"></script>
+<script>
+    //定义- - 个Vue组件component
+    Vue . component( "qinjiang",{
+        props: ['qin'],
+        template: ' <li>{{qin}}</li>'
+        白
+    });
+    var vm = new Vue({
+        el: " #app",
+        白
+        data:{
+            items: ["Java", "Linux","前端"]
+            白
+        });
+</script>
+-->
+
+</body>
+</html>
